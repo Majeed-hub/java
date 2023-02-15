@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="d-none">
+      <p>
+        1. Demonstrate Basic File Commands in Ubuntu a. Creating directory and
+        files b. Working with hidden files c. Copying with another file d.
+        Finding the File e. Concatenating the files f. Difference betweem two
+        files a. Creating directory and files
+        <!-- step1: aimca@aimca:~$ mkdir os
+step2: aimca@aimca:~/os $ cat >opensource -->
+        The Opn Source definition is a bill of right for the computeruser. It
+        defines certain rights that a software must gran you to be certified as
+        open source. aimca@aimca:~/os$
+        <!-- aimca@aimca:~/os$ cat >freesoftware -->
+        free software is a matter of the users' freedom to run,
+        copy,distribute,study,change and improve the software. b. Working with
+        hidden files
+        <!-- step1: aimca@aimca:~/os$ mv freesoftware .freesoftware -->
+        <!-- aimca@aimca:~/os$ cat freesoftware -->
+        cat: freesoftware: No such file or directory
+        <!-- aimca@aimca:~/os$ ls -a -->
+        . .. .freesoftware opensource
+        <!-- step4: aimca@aimca:~/os$ ls -F -->
+        opensource
+        <!-- aimca@aimca:~/os$ ls -fa -->
+        . .. opensource .freesoftware c. Copying with another file
+        <!-- step 1: aimca@aimca:~/os$ cp opensource freesoftware -->
+        <!-- step 2: aimca@aimca:~/os$ ls -->
+        freesoftware opensource d. Finding the File
+        <!-- step 1: aimca@aimca:~$ find os -->
+        os os/freesoftware os/opensource os/.freesoftware e. Concatenating the
+        files
+        <!-- step1: aimca@aimca:~$ cat opensource freesoftware -->
+        The Opn Source definition is a bill of right for the computeruser. It
+        defines certain rights that a software must gran you to be certified as
+        open source. free software is a matter of the users' freedom to run,
+        copy,distribute,study,change and improve the software f. Difference
+        betweem two files
+        <!-- aimca@aimca:~$ diff opensource freesoftware -->
+        1,2c1 The Opn Source definition is a bill of right for the computeruser.
+        It defines certain rights that a software must gran you to be certified
+        as open source. --- free software is a matter of the users' freedom to
+        run, copy,distribute,study,change and improve the software. 2.
+        Demonstrate Basic Networking Commands in Ubuntu a. ifconfig b.ping c.
+        traceroute and tracepath d. netstat with variation command e.dig a.
+        ifconfig
+        <!-- root@aimca:/home/aimca# ifconfig -->
+        enp0s3: flags=4163 mtu 1500 inet 10.0.2.15 netmask 255.255.255.0
+        broadcast 10.0.2.255 inet6 fe80::18ba:755d:444f:b626 prefixlen 64
+        scopeid 0x20 ether 08:00:27:60:c5:0c txqueuelen 1000 (Ethernet) b.ping
+        <!-- root@aimca:/home/aimca# ping google.com -->
+        PING google.com (142.250.182.78) 56(84) bytes of data. 64 bytes from
+        maa05s20-in-f14.1e100.net (142.250.182.78): icmp_seq=1 ttl=115 time=30.5
+        ms root@aimca:/home/aimca# ^C c. traceroute
+        <!-- aimca@aimca:~$ traceroute google.com -->
+        traceroute to google.com (142.250.182.110), 64 hops max 1 10.0.2.2
+        0.002ms 0.001ms 0.001ms 2 * * * 3 * * * 4 * ^C tracepath
+        <!-- aimca@aimca:~$ tracepath google.com -->
+        1?: [LOCALHOST] pmtu 1500 1: _gateway 0.554ms 1: _gateway 0.978ms 2: no
+        reply 3: _gateway 1.234ms !N Resume: pmtu 1500 d. netstat
+        <!-- aimca@aimca:~$ netstat -->
+        Active Internet connections (w/o servers) Proto Recv-Q Send-Q Local
+        Address Foreign Address State tcp 0 0 aimca:37198
+        a104-118-7-64.depl:http ESTABLISHED
+        <!-- aimca@aimca:~$ netstat -s -->
+        Ip: Forwarding: 2 71895 total packets received 1 with invalid addresses
+        <!-- aimca@aimca:~$ netstat -r -->
+        Kernel IP routing table Destination Gateway Genmask Flags MSS Window
+        irtt Iface default _gateway 0.0.0.0 UG 0 0 0 enp0s3 10.0.2.0 0.0.0.0
+        255.255.255.0 U 0 0 0 enp0s3 link-local 0.0.0.0 255.255.0.0 U 0 0 0
+        enp0s3 e. dig
+        <!-- aimca@aimca:~$ dig google.com -->
+
+        ; DiG 9.18.1-1ubuntu1.2-Ubuntu google.com ;; global options: +cmd ;; Got
+        answer: ;; ->>HEADER opcode: QUERY, status: NOERROR, id: 46204 ;; flags:
+        qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1 3. How to
+        check for a File Existence in the File system using Ubuntu
+        <!-- aimca@aimca:~$ vi bca.sh -->
+        echo "enter filename" read fn if [ -f $fn ] then echo "file exist" else
+        echo "file does not exist" fi output 1: :wq aimca@aimca:~$ vi bca.sh
+        enter filename freesoftware file exist output 2: :wq aimca@aimca:~$ vi
+        bca.sh enter filename freesoftware file exist 4. Demonstrate the Vi
+        Editor & its Mods in Ubuntu
+        <!-- a. Command mod -->
+        k ,j ,M, L,( , ), H
+        <!-- b. Insert mod -->
+        I a A o O r R
+        <!-- c. ex Mode -->
+        wq, w fileName ,Searching and Replacing , Block delete commands step 1:
+        a. Command Mod k : Moves the cursor up one line. j : Moves the cursor
+        down one line. M : Move to middle of screen. L : Move to bottom of
+        screen. ( : Positions cursor to beginning of current sentence. ) :
+        Positions cursor to beginning of next sentence. H : Move to top of
+        screen. Step 2: b. Insert mod I : Inserts text at beginning of current
+        line. a : Inserts text after current cursor location. A : Inserts text
+        at end of current line. o: Creates a new line for text entry below
+        cursor location. O : Creates a new line for text entry above cursor
+        location. r : Replace single character under the cursor with the next
+        character typed. R : Replaces text from the cursor to right. Step 3: c.
+        ex Mode wq : Write and quit (save and exit). w fileName : Write to file
+        called fileName (save as). Searching and Replacing in (ex Mode): vi also
+        has powerful search and replace capabilities. The formal syntax for
+        searching is: :s/string Block delete commands in (x mode): need to press
+        ESC and then commands will be followed by colon(:). 1. :1d delete the
+        line 1. 2. :1,5d deletes the lines from 1 to 5. 6. Install Git on Ubuntu
+        and write the each step of Installation Step 1: First, use the apt
+        package management tools to update your local package index.
+        <!-- $ sudo apt update -->
+        Step 2: With the update complete, you can install Git:
+        <!-- $ sudo apt install git -->
+        Step 3: You can confirm that you have installed Git correctly by running
+        the following command and checking that you receive relevant output.
+        <!-- $ git –version -->
+        Output Git version 2.25.1 8. Create website using Boot strap components
+        Step 1. Create a html page Step 2. Go on bootstrap official website Step
+        3. Copy CSS link and paste it in the head section of your html page Step
+        4. Start to design a website which includes the following - Menu bar. -
+        Photos with description on the left or the right side. - Create buttons
+        which links to another page (could be any page) - Create a form with
+        some basic information. - Create a footer. 5. Run the program and
+        display the result. 9. Write the steps to create the Wikipedia account
+        and create the Wikipedia page for Yourself/Organization/Biography.
+        step1: Go to the Wikipedia website and click on the "Create account"
+        button in the topright corner of the page. step 2:Fill out the
+        registration form by entering your email address, username, and
+        password. You will also need to enter a captcha to verify that you are
+        not a robot. step 3: Click on the "Create your account" button to
+        complete the registration process. step 4:After creating your account,
+        you can create a Wikipedia page for yourself by following these steps:
+        step 5: Go to the Wikipedia website and click on the "Create a page"
+        link in the top-right corner of the page. step 6: Select the "Biography"
+        option from the list of page types. step 7: Enter the name of the person
+        you want to create a page for in the "Name" field. step 8: Click on the
+        "Create page" button to open the Wikipedia editor. step 9: Use the
+        Wikipedia editor to enter information about the person, such as their
+        background, education,career, and notable achievements. Be sure to
+        follow the Wikipedia guidelines for creating biographies and avoid
+        adding biased or selfpromotional content. step 10: When you are
+        finished, click on the "Publish changes" button to save the page. step
+        11: Your Wikipedia page will be reviewed by other Wikipedia editors
+        before it is published. If the page meets the Wikipedia guidelines, it
+        will be made live on the website. 10.Demonstrate the setting updation of
+        Mozilla Firefox Here are the steps to update Mozilla Firefox: step 1:
+        Open Mozilla Firefox and click on the menu button (three horizontal
+        lines) in the top-right corner of the window. step 1:From the menu, go
+        to "Help" and then click on "About Firefox". step 2; In the "About
+        Firefox" window, Firefox will check for updates and display the current
+        version number. If an update is available, it will be downloaded and
+        installed automatically. If no update is available, you will see a
+        message saying "Firefox is up to date". step 3: Click on "Restart to
+        update Firefox" to apply the updates and restart the browser. That's it!
+        Mozilla Firefox will now be updated to the latest version.
+        12.Demonstrate how to use the libre office. a. To prepare an
+        advertisement to a company with the following specifications i.
+        Attractive Page Border. ii. Design the name of company using WordArt.
+        iii. Use ClipArt Using of OpenOffice writer. 1. Open Libre Office
+        writer. 2. Save file use File > Save As> give valid name and click Save.
+        3. Click Insert > Frame. 4. Select the Page Border use Format > Page >
+        Borders then select your style of Page Border. 5. Design the company
+        name use Insert > FontWork Enable FontWork Option and Design Company
+        Name. 6. Insert Image Insert > Image or from Gallery> select the picture
+        and insert. 7. Select the Text and change the font color and size
+        Output: b) Create worksheet with following fields Empno, Ename, Basic
+        Pay(BP), Travelling Allowance(TA), Dearness Allowance(DA), House Rent
+        Allowance(HRA), Income Tax(IT), Provident Fund(PF), Net Pay(NP) Given:
+        DA= 15% of BP, HRA=18% of BP, TA=17.5% of BP, IT=15% of BP, PF=12.5% of
+        BP steps:- 1. Create an Excel Worksheet for an employee pay roll system.
+        2. Enter the details of Employee as given and calculate the DA, TA, HRA,
+        IT, PF as a percentage on the basis of Basic Pay. 3. Calculate the Net
+        Pay by using the formulae Gross Pay= DA+TA+HRA+BP, Deductions=IT+PF Net
+        Pay= Gross Pay-Deductions 13.Write the steps to install GNU Compiler to
+        Ubuntu Perform the steps below to install the GCC Compiler Ubuntu 1.
+        Start by updating the packages list:
+        <!-- sudo apt update -->
+        2. Install the build-essential package by typing:
+        <!-- sudo apt install build-essential -->
+        The command installs a bunch of new packages including gcc, g++ and
+        make. 3. You may also want to install the manual pages about using
+        GNU/Linux for development:
+        <!-- sudo apt -get install manpages-dev -->
+        4. To validate that the GCC compiler is successfully installed, use the
+        gcc --version command which prints the GCC version:
+        <!-- gcc –version -->
+        Compiling a Hello World Example Open your text editor and create the
+        following file: hello.c
+        <!-- #include <stdio.h> -->
+        int main() { printf ("Hello World!\n"); return 0; } Save the file and
+        compile it into an executable using the following command: gcc hello.c
+        -o hello Execute the hello program with: ./hello Output: Hello World!
+      </p>
+    </div>
+  </body>
+</html>
